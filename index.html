@@ -16,6 +16,7 @@
 <body>
 
     <header>
+
         <nav>
             <div class="logo"><a href="#">Riccardo Ardizzoni</a></div>
             <ul>
@@ -24,7 +25,17 @@
                 <li><a href="#formazione">Formazione</a></li>
                 <li><a href="#contatti">Contatti</a></li>
             </ul>
+            <span class="menu-icon" onclick="toggleMenu()">☰</span>
         </nav>
+
+        <div id="mobileMenu" class="mobile-menu">
+            <span class="close-menu" onclick="closeMenu()">✖</span>
+            <a href="#progetti">Progetti</a>
+            <a href="#esperienza">Esperienza</a>
+            <a href="#formazione">Formazione</a>
+            <a href="#contatti">Contatti</a>
+        </div>
+
     </header>
 
     <main>
