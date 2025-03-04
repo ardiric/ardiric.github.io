@@ -2,6 +2,8 @@
 <html lang="en">
 <head>
 
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>-->
+
     <link rel="stylesheet" href="style.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,39 +20,40 @@
     <header>
 
         <nav>
-            <div class="logo"><a href="#">Riccardo Ardizzoni</a></div>
-            <ul>
-                <li><a href="#progetti">Progetti</a></li>
-                <li><a href="#esperienza">Esperienza</a></li>
-                <li><a href="#formazione">Formazione</a></li>
-                <li><a href="#contatti">Contatti</a></li>
+            <div class="logo" onclick="loadHome()">Riccardo Ardizzoni</div>
+            <ul id="menu">
+                <li><a id="btnProg" onclick="loadProgetti()">Progetti</a></li>
+                <li><a id="btnEsp" onclick="loadEsperienza()">Esperienza</a></li>
+                <li><a id="btnForm" onclick="loadFormazione()">Formazione</a></li>
+                <li><a id="btnCont" onclick="loadContatti()">Contatti</a></li>
             </ul>
             <span class="menu-icon" onclick="toggleMenu()">☰</span>
         </nav>
 
         <div id="mobileMenu" class="mobile-menu">
             <span class="close-menu" onclick="closeMenu()">✖</span>
-            <a href="#progetti">Progetti</a>
-            <a href="#esperienza">Esperienza</a>
-            <a href="#formazione">Formazione</a>
-            <a href="#contatti">Contatti</a>
+            <a id="btnProgMobile" onclick="loadProgetti()">Progetti</a>
+            <a id="btnEspMobile" onclick="loadEsperienza()">Esperienza</a>
+            <a id="btnFormMobile" onclick="loadFormazione()">Formazione</a>
+            <a id="btnContMobile" onclick="loadContatti()">Contatti</a>
         </div>
 
     </header>
 
-    <main>
-        <div class="main-content">
-            <h1><span>Riccardo Ardizzoni</span><br>Software Developer</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipiscing elit.</p>
-            <button class="btn black">Progetti</button>
-            <button class="btn orange">Contatti</button>
-        </div>
-    </main>
+    <main id="main"></main>
 
     <footer>
         Riccardo Ardizzoni | <span id="currentYear"></span>
     </footer>
 
+    <!-- IMPORTAZIONE DELLE SINGOLE PAGINE -->
+    <script src="pages/home.js"></script>
+    <script src="pages/progetti.js"></script>
+    <script src="pages/esperienza.js"></script>
+    <script src="pages/formazione.js"></script>
+    <script src="pages/contatti.js"></script>
+
+    <!-- IMPORTAZIONE DELLO SCRIPT PRINCIPALE -->
     <script src="script.js"></script>
     
 </body>

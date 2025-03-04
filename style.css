@@ -2,10 +2,10 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "Chakra Petch", sans-serif;
 }
 
 body {  
-    font-family: "Chakra Petch", sans-serif;
     font-weight: 400;
     display: flex;
     flex-direction: column;
@@ -14,35 +14,34 @@ body {
 }
 
 
-/* ==================================================
+/* ====================================================================================================
    ==================== HEADER ====================
-   ================================================== */
+   ==================================================================================================== */
 
 header {
     background: #212121;
     color: white;
     padding: 15px 0;
     text-align: center;
-    padding: 20px 0;
+    padding: 30px 20px;
 }
 
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 20px;
 }
 
 .logo {
     font-size: 24px;
     font-weight: bold;
-}
-
-.logo a{
-    text-decoration: none;
     color: #ff5000;
     cursor: pointer;
 }
+
+/* ====================================================================================================
+   ==================== DESKTOP MENU ====================
+   ==================================================================================================== */
 
 ul {
     list-style: none;
@@ -53,9 +52,19 @@ ul li {
     margin: 0 15px;
 }
 
+ul li:first-child {
+    margin-left: 0;
+}
+
+ul li:last-child {
+    margin-right: 0;
+}
+
 ul li a {
     text-decoration: none;
     color: white;
+    cursor: pointer;
+    font-size: 20px;
 }
 
 ul li a:hover {
@@ -63,11 +72,24 @@ ul li a:hover {
     text-decoration: underline;
 }
 
+/* ====================================================================================================
+   ==================== HAMBURGER ICON ====================
+   ==================================================================================================== */
+
 .menu-icon {
     display: none;
-    font-size: 28px;
+    font-size: 20px;
     cursor: pointer;
+    font-weight: bold;
 }
+
+.menu-icon:hover {
+    color: #ff5000;
+}
+
+/* ====================================================================================================
+   ==================== MOBILE MENU ====================
+   ==================================================================================================== */
 
 .mobile-menu {
     display: none;
@@ -76,32 +98,57 @@ ul li a:hover {
     right: 0;
     width: 80%;
     height: 100%;
-    padding-top: 100px;
     background: #212121;
     flex-direction: column;
     align-items: flex-end;
+    /*padding-top: 80px;*/
 }
 
-.mobile-menu a {
+/* .mobile-menu */
+header div a { 
     text-decoration: none;
     color: white;
-    padding: 15px;
+    margin: 10px 30px;
     display: block;
+    font-size: 20px;
+    cursor: pointer;
 }
 
-.mobile-menu a:hover {
+/* .mobile-menu */
+header div a:hover {
     color: #ff5000;
     text-decoration: underline;
 }
 
 .close-menu {
     color: white;
-    font-size: 28px;
+    font-size: 20px;
     cursor: pointer;
+    /*
     position: absolute;
     top: 20px;
     right: 20px;
+    */
+    margin: 30px;
+    font-weight: bold;
 }
+
+.close-menu:hover {
+    color: #ff5000;
+}
+
+/* ====================================================================================================
+   ==================== ATTRIBUTI PER ENTRAMBI I MENU ====================
+   ==================================================================================================== */
+
+.menu-item-active {
+    color: #ff5000;
+    text-decoration: underline;
+}
+
+/* ====================================================================================================
+   ==================== MEDIA QUERY ====================
+   ==================================================================================================== */
 
 @media screen and (max-width: 768px) {
     ul {
@@ -112,21 +159,23 @@ ul li a:hover {
     }
 }
 
-/* ==================================================
+/* ====================================================================================================
    ==================== MAIN ====================
-   ================================================== */
+   ==================================================================================================== */
 
 main {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 50px;
+    padding: 10vh 10vw;
     background: white;
 }
 
+/*
 .main-content {
-    max-width: 500px;
+    //max-width: 500px;
 }
+*/
 
 .main-content h1 {
     font-size: 36px;
@@ -137,18 +186,8 @@ main {
     color: #ff5000;
 }
 
-.main-content p {
+.margin-bottom {
     margin-bottom: 20px;
-}
-
-.btn {
-    padding: 10px 20px;
-    margin-top: 10px;
-    margin-right: 10px;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-    font-weight: bold;
 }
 
 .btn {
@@ -181,12 +220,11 @@ main {
 .btn.orange:hover {
     background: white;
     color: #ff5000;
-    border: 2px solid #ff5000;
 }
 
-/* ==================================================
+/* ====================================================================================================
    ==================== FOOTER ====================
-   ================================================== */
+   ==================================================================================================== */
 
 footer {
     background: #212121;
@@ -195,4 +233,116 @@ footer {
     text-align: center;
     margin-top: auto;
     padding: 20px 0;
+}
+
+/* ====================================================================================================
+   ==================== FORMAZIONE/ESPERIENZA ====================
+   ==================================================================================================== */
+
+
+.form-content, .esp-content{
+    display: grid; 
+    grid-template-columns: 40vw 10vw 40vw;
+}
+
+.data{
+    grid-column: 1 / 2; 
+    grid-row: 1 / 2;
+    text-align: end;
+}
+
+#dot-line{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    grid-column: 2 / 3; 
+    grid-row: 1 / 3;
+}
+
+.dot {
+    min-height: 15px;
+    min-width: 15px;
+    background-color: transparent;
+    border-radius: 50%;
+    border: 5px solid black;
+    display: inline-block;
+    margin-top: 5px;
+    margin-left: 2px;
+}
+
+.line {
+    border-left: 6px solid #ff5000;
+    height: 100%;
+    margin-top: 5px;
+    border-radius: 10px;
+    margin-left: 2px;
+}
+
+.form-des, .esp-des{
+    grid-column: 3 / 4; 
+    grid-row: 1 / 2;
+    text-align: start;
+    margin-bottom: 5px;
+}
+
+.altre-info{
+    grid-column: 3 / 4; 
+    grid-row: 2 / 3;
+    text-align: start;
+    margin-bottom: 20px;
+}
+
+/* ====================================================================================================
+   ==================== PROGETTI ====================
+   ==================================================================================================== */
+
+.single-project{
+    padding: 15px;
+    border: 2px solid black;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.single-project:not(:last-child){
+    margin: 0 0 20px 0;
+}
+
+.single-project h3{
+    text-align: center;
+    cursor: pointer;
+}
+
+.single-project h3:hover{
+    color: #ff5000;
+    text-decoration: underline;
+}
+
+.single-project img{
+    margin-top: 15px;
+    min-width: 200px;
+    min-height: 100px;
+    border: 2px solid black;
+}
+
+.single-project ol{
+    margin-top: 15px;
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.single-project ol li{
+    padding: 0 5px;
+    background-color: lightgray;
+    border-radius: 5px;
+    margin: 5px;
+    color: black;
+    font-weight: bold;
+    border: 2px solid #ff5000;
 }
