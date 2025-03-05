@@ -30,7 +30,7 @@ function generaBloccoEsperienza() {
                 <span class="dot"></span>
                 ${isLastItem ? '' : '<div class="line"></div>'}
             </div>
-            <div>
+            <div class="esp-des-info">
                 <h3 class="esp-des">${item.descrizione}</h3>
                 <p class="altre-info">${item.info}</p>
             </div>

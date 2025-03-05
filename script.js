@@ -1,5 +1,7 @@
 document.getElementById("currentYear").textContent = new Date().getFullYear();
 
+const overlay = document.getElementById('overlay');
+
 const main = document.getElementById("main");
 
 const mobileMenu = document.getElementById("mobileMenu");
@@ -16,11 +18,18 @@ const btnContMobile = document.getElementById("btnContMobile");
 
 function toggleMenu() {
     mobileMenu.style.display = menu.style.display === "flex" ? "none" : "flex";
+    overlay.classList.toggle('show');
 }
 
 function closeMenu() {
     mobileMenu.style.display = "none";
+    overlay.classList.remove('show');
 }
+
+overlay.addEventListener('click', function () {
+    mobileMenu.style.display = "none";
+    overlay.classList.remove('show');
+});
 
 /*
 $(function(){
@@ -29,7 +38,6 @@ $(function(){
 */
 
 /* Funzioni per caricare le singole pagine */
-
 function loadHome() {
 
     main.innerHTML = home;
@@ -60,6 +68,7 @@ function loadProgetti() {
     btnProgMobile.classList.add("menu-item-active");
     
     mobileMenu.style.display = "none";
+    overlay.classList.remove('show');
 
 }
 
@@ -78,6 +87,7 @@ function loadEsperienza() {
     btnEspMobile.classList.add("menu-item-active");
     
     mobileMenu.style.display = "none";
+    overlay.classList.remove('show');
 
 }
 
@@ -96,9 +106,11 @@ function loadFormazione() {
     btnFormMobile.classList.add("menu-item-active");
     
     mobileMenu.style.display = "none";
+    overlay.classList.remove('show');
 
 }
 
+/*
 function loadContatti() {
 
     main.innerHTML = contatti;
@@ -114,9 +126,10 @@ function loadContatti() {
     btnContMobile.classList.add("menu-item-active");
     
     mobileMenu.style.display = "none";
+    overlay.classList.remove('show');
 
 }
+*/
 
 /* Inizializzazione della pagina home */
-
 main.innerHTML = home;

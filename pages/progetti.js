@@ -2,19 +2,45 @@
 // le tecnologie devono essere separate da virgola e spazio
 const datiProgetti = [
     { 
-        "nome": "Progetto 1", 
-        "fotoPrincipale": "link_foto_1" ,
-        "tecnologie": "tec1, tec2, tec3, tec4, tec5, tec6"
-    },
-    { 
-        "nome": "Progetto 2", 
+        "nome": "TC - Online", 
         "fotoPrincipale": "link_foto_2" ,
-        "tecnologie": "tec1, tec2, tec3"
-    },
+        "tecnologie": "PHP, SQL, HTML, CSS, Apache, MySQL, phpMyAdmin, MongoDB"
+    }
+    ,
     { 
-        "nome": "Progetto 3", 
+        "nome": "Squealer", 
         "fotoPrincipale": "link_foto_3" ,
-        "tecnologie": "tec1, tec2"
+        "tecnologie": "React, Node JS, jQuery, MySQL, JavaScript, HTML, CSS"
+    }
+    ,
+    { 
+        "nome": "Naboo", 
+        "fotoPrincipale": "link_foto_1" ,
+        "tecnologie": "Java, FXML, CSS, JavaFX, SceneBuilder, JSON, Telegram Bot"
+    }
+    ,
+    { 
+        "nome": "Android Signal Map", 
+        "fotoPrincipale": "link_foto_3" ,
+        "tecnologie": "Java, Android Studio, XML, Google Maps, MGRS"
+    }
+    ,
+    { 
+        "nome": "Role Prevision", 
+        "fotoPrincipale": "link_foto_3" ,
+        "tecnologie": "Python, Machine Learning, AI"
+    }
+    ,
+    { 
+        "nome": "Client-Server Message", 
+        "fotoPrincipale": "link_foto_3" ,
+        "tecnologie": "Java, Concorrenza, Thread"
+    }
+    ,
+    { 
+        "nome": "Card Gestor", 
+        "fotoPrincipale": "link_foto_3" ,
+        "tecnologie": "Java, GWT, MapDB, JSON, JUnit, Maven"
     }
 ];
 
@@ -22,10 +48,8 @@ function generaBloccoProgetti() {
 
     let blocks = `
         <div class="main-content">
-            <h2 class="main-content-title">Progetti</h2>
+            <h2 class="main-content-title">Work in progress</h2>
     `;
-
-    blocks += `<p>Work in progress</p>`;
     
     datiProgetti.forEach(item => {
 
