@@ -1,13 +1,3 @@
-/*
-let progetti = `
-<div class="main-content">
-
-    <p>Progetti - Work in progress</p>
-
-</div>
-`;
-*/
-
 // Creazione dell'oggetto JSON
 // le tecnologie devono essere separate da virgola e spazio
 const datiProgetti = [
@@ -30,9 +20,12 @@ const datiProgetti = [
 
 function generaBloccoProgetti() {
 
-    let blocks = `<div class="main-content">`;
+    let blocks = `
+        <div class="main-content">
+            <h2 class="main-content-title">Progetti</h2>
+    `;
 
-    blocks += `<p>Progetti - Work in progress</p>`;
+    blocks += `<p>Work in progress</p>`;
     
     datiProgetti.forEach(item => {
 
