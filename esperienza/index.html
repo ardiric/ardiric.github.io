@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <link rel="stylesheet" href="/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Riccardo Ardizzoni</title>
+
+</head>
+<body>
+
+    <div id="overlay" class="overlay"></div>
+
+    <header>
+
+        <nav>
+            <a class="logo" href="/">Riccardo Ardizzoni</a>
+            <ul id="menu">
+                <li><a href="/progetti" id="btnProg">Progetti</a></li>
+                <li><a href="/esperienza" id="btnEsp" class="menu-item-active">Esperienza</a></li>
+                <li><a href="/formazione" id="btnForm">Formazione</a></li>
+                <li><a href="https://www.linkedin.com/in/riccardo-ardizzoni-427066265/" id="btnCont">LinkedIn</a></li>
+            </ul>
+            <span class="menu-icon" onclick="toggleMenu()">☰</span>
+        </nav>
+
+        <div id="mobileMenu" class="mobile-menu">
+            <span class="close-menu" onclick="closeMenu()">✖</span>
+            <a href="/progetti" id="btnProgMobile">Progetti</a>
+            <a href="/esperienza" id="btnEspMobile" class="menu-item-active">Esperienza</a>
+            <a href="/formazione" id="btnFormMobile">Formazione</a>
+            <a href="https://www.linkedin.com/in/riccardo-ardizzoni-427066265/" id="btnContMobile">LinkedIn</a>
+        </div>
+
+    </header>
+
+    <main id="main">
+
+        <div class="main-content">
+            
+            <h2 class="main-content-title">Esperienza lavorativa</h2>
+
+            <section id="lista-esperienze"></section>
+
+            <template id="card-template">
+
+                <div class="esp-content">
+                    <p class="data esperienza-date"></p>
+                    <div id="dot-line">
+                        <span class="dot"></span>
+                        <div class="line esperienza-line"></div>
+                    </div>
+                    <div class="esp-des-info">
+                        <h3 class="esp-des esperienza-des"></h3>
+                        <p class="altre-info esperienza-info"></p>
+                    </div>
+                </div>
+
+            </template>
+
+        </div>
+
+    </main>
+
+    <footer>
+        Riccardo Ardizzoni | <span id="currentYear"></span>
+    </footer>
+
+    <script src="/script.js"></script>
+    
+    <script>
+
+        async function caricaEsperienza() {
+
+            const res = await fetch('/esperienza/data.json');
+        
+            if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        
+            const oggetti = await res.json();
+            const container = document.getElementById('lista-esperienze');
+            const cardTemplate  = document.getElementById('card-template');
+        
+            oggetti.forEach((oggetto, index) => {
+
+                const card = cardTemplate.content.cloneNode(true);
+
+                card.querySelector('.esperienza-date').innerHTML      = oggetto.date;
+                card.querySelector('.esperienza-des').textContent     = oggetto.descrizione;
+                card.querySelector('.esperienza-info').textContent    = oggetto.info;
+
+                if (index === oggetti.length - 1) {
+                    card.querySelector('.esperienza-line').hidden = true;
+                }
+
+                container.appendChild(card);
+
+            });
+
+        }
+    
+        caricaEsperienza().catch(err => console.error('Errore caricamento dati:', err));
+
+    </script>
+    
+</body>
+</html>

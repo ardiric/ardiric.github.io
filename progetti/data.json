@@ -1,0 +1,96 @@
+[
+    { 
+        "nome": "TC - Online",
+        "descrizione": "Applicazione Web che gestisce i circoli tennis e tutto ciò a loro connessi. Questo progetto ha come obiettivo principale la progettazione di un database partendo dai requisiti richiesti. L’applicazione si occupa di permettere all’utente di interagire con i dati presenti sul database.",
+        "fotoPrincipale": "/assets/img/progetti/tc-online.jpg",
+        "tecnologie": [
+            { "nome": "PHP" },
+            { "nome": "SQL" },
+            { "nome": "HTML" },
+            { "nome": "CSS" },
+            { "nome": "Apache" },
+            { "nome": "MySQL" },
+            { "nome": "phpMyAdmin" },
+            { "nome": "MongoDB" }
+          ]
+    }
+    ,
+    { 
+        "nome": "Squealer",
+        "descrizione": "Applicazione web che realizza un social network simile a Twitter nel quale un utente può: iscriversi; visualizzare messaggi scritti da altri utenti; scrivere messaggi indirizzati ad utenti singoli o messaggi pubblici; inserire nel messaggio testo, link, immagini e geolocazioni. Oltre all’applicazione per utenti finali è stata realizzata la dashboard per moderatori e la dashboard per utenti vip.",
+        "fotoPrincipale": "/assets/img/progetti/squealer.jpg",
+        "tecnologie": [
+            { "nome": "React" },
+            { "nome": "Node JS" },
+            { "nome": "jQuery" },
+            { "nome": "MySQL" },
+            { "nome": "JavaScript" },
+            { "nome": "HTML" },
+            { "nome": "CSS" }
+          ]
+    }
+    ,
+    { 
+        "nome": "Naboo",
+        "fotoPrincipale": "/assets/img/progetti/naboo.jpg",
+        "descrizione": "Ambiente per leggere, votare e commentare notizie on-line. Questo Progetto è diviso in due parti: applicazione desktop stand-alone che serve agli amministratori per avviare il bot telegram, gestire gli utenti, le fonti, le notizie e i commenti; bot Telegram attraverso il quale gli utenti possono accedere alle notizie, votarle e commentarle.",
+        "tecnologie": [
+            { "nome": "Java" },
+            { "nome": "FXML" },
+            { "nome": "CSS" },
+            { "nome": "JavaFX" },
+            { "nome": "SceneBuilder" },
+            { "nome": "JSON" },
+            { "nome": "Telegram Bot" }
+          ]
+    }
+    ,
+    { 
+        "nome": "Android Signal Map",
+        "descrizione": "Applicazione per dispositivi mobili Android che ha come scopo quello di monitorare il segnale LTE, WiFi e il volume del suono circostante. In base al segnale ottenuto colora la mappa con tre diversi colori (verde, giallo, rosso).",
+        "fotoPrincipale": "/assets/img/progetti/android-signal-map.jpg",
+        "tecnologie": [
+            { "nome": "Java" },
+            { "nome": "Android Studio" },
+            { "nome": "XML" },
+            { "nome": "Google Maps" },
+            { "nome": "MGRS" }
+          ]
+    }
+    ,
+    { 
+        "nome": "Role Prevision",
+        "descrizione": "Progetto che analizza statisticamente le caratteristiche dei giocatori di Fifa 23, un videogioco di calcio per console, e prevede alcuni attributi dei giocatori conoscendone altri, tramite algoritmi di machine learning.",
+        "fotoPrincipale": "/assets/img/progetti/role-prevision.jpg",
+        "tecnologie": [
+            { "nome": "Python" },
+            { "nome": "Machine Learning" },
+            { "nome": "AI" }
+          ]
+    }
+    ,
+    { 
+        "nome": "Client-Server Message",
+        "fotoPrincipale": "/assets/img/progetti/client-server.jpg",
+        "descrizione": "Applicazione client-server in Java che permette a multipli client di connettersi ad un server. L’app realizza un sistema di scambio di messaggio tra publisher e subscriber in maniera concorrente, quindi, le risorse sono condivise e perciò è necessario implementare delle funzioni che agiscono in mutua esclusione garantendo l’accesso alle risorse ad un solo Thread alla volta. I messaggi vengono inviati su determinati argomenti di discussione, detti topic. Un client, una volta connesso al server, può richiedere la lista di tutti i topic presenti sulla piattaforma e può identificarsi come publisher o subscriber per un determinato topic.",
+        "tecnologie": [
+            { "nome": "Java" },
+            { "nome": "Concorrenza" },
+            { "nome": "Thread" }
+          ]
+    }
+    ,
+    { 
+        "nome": "Card Gestor",
+        "descrizione": "Applicazione Web che permette di gestire e scambiare carte da gioco, le principali funzionalità sono le seguenti: ricerca e visualizzazione di carte dal catalogo; gestione delle carte possedute e desiderate; gestione di deck; scambio con altri utenti. L’applicazione supporta le carte di tre giochi: Magic, Pokemon e YuGiHo.",
+        "fotoPrincipale": "/assets/img/progetti/card-gestor.jpg",
+        "tecnologie": [
+            { "nome": "Java" },
+            { "nome": "GWT" },
+            { "nome": "MapDB" },
+            { "nome": "JSON" },
+            { "nome": "JUnit" },
+            { "nome": "Maven" }
+          ]
+    }
+]

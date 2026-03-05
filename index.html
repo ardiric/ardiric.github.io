@@ -2,8 +2,6 @@
 <html lang="en">
 <head>
 
-    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>-->
-
     <link rel="stylesheet" href="style.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,11 +20,11 @@
     <header>
 
         <nav>
-            <div class="logo" onclick="loadHome()">Riccardo Ardizzoni</div>
+            <a class="logo" href="/">Riccardo Ardizzoni</a>
             <ul id="menu">
-                <li><a id="btnProg" onclick="loadProgetti()">Progetti</a></li>
-                <li><a id="btnEsp" onclick="loadEsperienza()">Esperienza</a></li>
-                <li><a id="btnForm" onclick="loadFormazione()">Formazione</a></li>
+                <li><a href="/progetti"   id="btnProg">Progetti</a></li>
+                <li><a href="/esperienza" id="btnEsp">Esperienza</a></li>
+                <li><a href="/formazione" id="btnForm">Formazione</a></li>
                 <li><a href="https://www.linkedin.com/in/riccardo-ardizzoni-427066265/" id="btnCont">LinkedIn</a></li>
             </ul>
             <span class="menu-icon" onclick="toggleMenu()">☰</span>
@@ -34,28 +32,30 @@
 
         <div id="mobileMenu" class="mobile-menu">
             <span class="close-menu" onclick="closeMenu()">✖</span>
-            <a id="btnProgMobile" onclick="loadProgetti()">Progetti</a>
-            <a id="btnEspMobile" onclick="loadEsperienza()">Esperienza</a>
-            <a id="btnFormMobile" onclick="loadFormazione()">Formazione</a>
+            <a href="/progetti"   id="btnProgMobile">Progetti</a>
+            <a href="/esperienza" id="btnEspMobile">Esperienza</a>
+            <a href="/formazione" id="btnFormMobile">Formazione</a>
             <a href="https://www.linkedin.com/in/riccardo-ardizzoni-427066265/" id="btnContMobile">LinkedIn</a>
         </div>
 
     </header>
 
-    <main id="main"></main>
+    <main id="main">
+
+        <div class="main-content home-page-content">
+            <h1><span>Riccardo Ardizzoni</span><br>Software Developer</h1>
+            <div id="home-btn-container">
+                <a href="/progetti" class="btn black">Progetti</a>
+                <a href="https://www.linkedin.com/in/riccardo-ardizzoni-427066265/" class="btn orange">LinkedIn</a>
+            </div>
+        </div>
+
+    </main>
 
     <footer>
         Riccardo Ardizzoni | <span id="currentYear"></span>
     </footer>
 
-    <!-- IMPORTAZIONE DELLE SINGOLE PAGINE -->
-    <script src="pages/home.js"></script>
-    <script src="pages/progetti.js"></script>
-    <script src="pages/esperienza.js"></script>
-    <script src="pages/formazione.js"></script>
-    <!--<script src="pages/contatti.js"></script>-->
-
-    <!-- IMPORTAZIONE DELLO SCRIPT PRINCIPALE -->
     <script src="script.js"></script>
     
 </body>

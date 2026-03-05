@@ -51,6 +51,7 @@ nav {
     font-weight: bold;
     color: #ff5000;
     cursor: pointer;
+    text-decoration: none;
 }
 
 /* ====================================================================================================
@@ -81,7 +82,7 @@ ul li a {
     font-size: 20px;
 }
 
-ul li a:hover:not(:last-child) {
+ul li a:hover {
     color: #ff5000;
     text-decoration: underline;
 }
@@ -129,7 +130,7 @@ header div a {
 }
 
 /* .mobile-menu */
-header div a:hover:not(:last-child) {
+header div a:hover {
     color: #ff5000;
     text-decoration: underline;
 }
@@ -178,23 +179,15 @@ header div a:hover:not(:last-child) {
    ==================================================================================================== */
 
 main {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     padding: 5vh 5vw;
     background: white;
+    flex: 1;
 }
 
 .main-content-title{
     text-align: center;
     margin-bottom: 30px;
 }
-
-/*
-.main-content {
-    //max-width: 500px;
-}
-*/
 
 /* ====================================================================================================
    ==================== FOOTER ====================
@@ -205,7 +198,6 @@ footer {
     color: white;
     padding: 15px 0;
     text-align: center;
-    margin-top: auto;
     padding: 20px 0;
 }
 
@@ -219,7 +211,7 @@ footer {
 
 .main-content h1 {
     font-size: 36px;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
 }
 
 .main-content span {
@@ -228,6 +220,11 @@ footer {
 
 .margin-bottom {
     margin-bottom: 20px;
+}
+
+#home-btn-container{
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .btn {
@@ -245,6 +242,7 @@ footer {
     background: black;
     color: white;
     border: 2px solid black;
+    text-decoration: none;
 }
 
 .btn.black:hover {
@@ -328,9 +326,15 @@ footer {
 /* ====================================================================================================
    ==================== PROGETTI ====================
    ==================================================================================================== */
+   
+#lista-progetti {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(400px, 100%), 1fr));
+    gap: 1.5rem;
+}
 
 .single-project{
-    padding: 15px;
+    padding: 20px;
     border: 2px solid black;
     border-radius: 10px;
     display: flex;
@@ -340,29 +344,30 @@ footer {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
-.single-project:not(:last-child){
-    margin: 0 0 20px 0;
-}
-
 .single-project h3{
     text-align: center;
-    cursor: pointer;
+    /*cursor: pointer;*/
 }
 
+/*
 .single-project h3:hover{
     color: #ff5000;
     text-decoration: underline;
 }
+*/
 
 .single-project img{
+    height: 200px;
     margin-top: 15px;
-    min-width: 200px;
-    min-height: 100px;
-    border: 2px solid black;
+    /* min-width: 200px; */
+    /* min-height: 100px; */
+    /* border: 2px solid black; */
+    width: 100%;
+    object-fit: contain;
 }
 
 .single-project ol{
-    margin-top: 15px;
+    /*margin-top: 15px;*/
     list-style-type: none;
     display: flex;
     align-items: center;
@@ -378,4 +383,8 @@ footer {
     color: black;
     font-weight: bold;
     border: 2px solid #ff5000;
+}
+
+.single-project-des{
+    margin: 20px;
 }

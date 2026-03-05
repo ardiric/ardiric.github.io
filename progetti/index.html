@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <link rel="stylesheet" href="/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Riccardo Ardizzoni</title>
+
+</head>
+<body>
+
+    <div id="overlay" class="overlay"></div>
+
+    <header>
+
+        <nav>
+            <a class="logo" href="/">Riccardo Ardizzoni</a>
+            <ul id="menu">
+                <li><a href="/progetti"   id="btnProg" class="menu-item-active">Progetti</a></li>
+                <li><a href="/esperienza" id="btnEsp">Esperienza</a></li>
+                <li><a href="/formazione" id="btnForm">Formazione</a></li>
+                <li><a href="https://www.linkedin.com/in/riccardo-ardizzoni-427066265/" id="btnCont">LinkedIn</a></li>
+            </ul>
+            <span class="menu-icon" onclick="toggleMenu()">☰</span>
+        </nav>
+
+        <div id="mobileMenu" class="mobile-menu">
+            <span class="close-menu" onclick="closeMenu()">✖</span>
+            <a href="/progetti"   id="btnProgMobile" class="menu-item-active">Progetti</a>
+            <a href="/esperienza" id="btnEspMobile">Esperienza</a>
+            <a href="/formazione" id="btnFormMobile">Formazione</a>
+            <a href="https://www.linkedin.com/in/riccardo-ardizzoni-427066265/" id="btnContMobile">LinkedIn</a>
+        </div>
+
+    </header>
+
+    <main id="main">
+
+        <div class="main-content">
+
+            <h2 class="main-content-title">Progetti</h2>
+
+            <section id="lista-progetti"></section>
+
+            <template id="card-template">
+
+                <div class="single-project">
+                    <h3 class="single-project-name"></h3>
+                    <img class="single-project-img" src="" alt="Immagine progetto">
+                    <p class="single-project-des"></p>
+                    <ol class="single-project-ol"></ol>
+                <div>
+
+            </template>
+
+            <template id="tech-template">
+                <li class="single-tech-name"></li>
+            </template>
+
+        </div>
+
+    </main>
+
+    <footer>
+        Riccardo Ardizzoni | <span id="currentYear"></span>
+    </footer>
+
+    <script src="/script.js"></script>
+    
+    <script>
+
+        async function caricaProgetti() {
+
+            const res = await fetch('/progetti/data.json');
+        
+            if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        
+            const progetti = await res.json();
+            const container = document.getElementById('lista-progetti');
+            const cardTemplate  = document.getElementById('card-template');
+            const techTemplate  = document.getElementById('tech-template');
+        
+            progetti.forEach(progetto => {
+
+                const card = cardTemplate.content.cloneNode(true);
+
+                card.querySelector('.single-project-name').textContent      = progetto.nome;
+
+                card.querySelector('.single-project-img').src         = progetto.fotoPrincipale;
+                card.querySelector('.single-project-img').alt         = progetto.nome;
+
+                card.querySelector('.single-project-des').textContent      = progetto.descrizione;
+
+                const techList = card.querySelector('.single-project-ol');
+
+                progetto.tecnologie.forEach(tech => {
+
+                    const tag = techTemplate.content.cloneNode(true);
+                    const li  = tag.querySelector('.single-tech-name');
+
+                    li.textContent              = tech.nome;
+
+                    techList.appendChild(tag);
+
+                });
+
+                container.appendChild(card);
+
+            });
+
+        }
+    
+        caricaProgetti().catch(err => console.error('Errore caricamento dati:', err));
+
+    </script>
+
+</body>
+</html>

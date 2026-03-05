@@ -1,0 +1,17 @@
+[
+    { 
+        "date": "2024 - oggi", 
+        "descrizione": "Laurea Magistrale in Informatica" ,
+        "info": "Università degli studi di Bologna"
+    },
+    { 
+        "date": "2020 - 2024", 
+        "descrizione": "Laurea in Informatica per il Management" ,
+        "info": "Università degli studi di Bologna"
+    },
+    { 
+        "date": "2015 - 2020", 
+        "descrizione": "Diploma in Sistemi Informativi Aziendali" ,
+        "info": "ISIT Bassi-Burgatti, Cento"
+    }
+]

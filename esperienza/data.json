@@ -1,0 +1,17 @@
+[
+    { 
+        "date": "gen 2025 - oggi", 
+        "descrizione": "Sviluppatore software" ,
+        "info": "Delta Informatica S.r.l."
+    },
+    { 
+        "date": "ott 2023 - nov 2023<br>gen 2023 - mar 2023", 
+        "descrizione": "Sviluppatore Web (tirocinio)" ,
+        "info": "Centro Software S.p.A."
+    },
+    { 
+        "date": "mag 2019 - giu 2019<br>gen 2018 - feb 2018", 
+        "descrizione": "Impiegato ufficio mutui (stage)" ,
+        "info": "Cassa di Risparmio di Cento"
+    }
+]
